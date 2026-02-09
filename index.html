@@ -443,44 +443,486 @@
                 subjects: [
                     {
                         id: 'turkce', name: 'Türkçe', icon: '📖', color: '#ef4444',
-                        topics: [
-                            { id: 'sozcuk', name: 'Sözcükte Anlam' },
-                            { id: 'cumlede', name: 'Cümlede Anlam' },
-                            { id: 'paragraf', name: 'Paragraf' },
-                            { id: 'dilbilgisi', name: 'Dil Bilgisi' }
+                        mainTopics: [
+                            {
+                                id: 'sozcukte_anlam',
+                                name: 'Sözcükte Anlam',
+                                topics: [
+                                    { id: 'anlam_ozellikleri', name: 'Anlam Özellikleri' },
+                                    { id: 'sozcukler_arasi', name: 'Sözcükler Arası Anlam İlişkileri' },
+                                    { id: 'anlam_olaylari', name: 'Anlam Olayları' },
+                                    { id: 'kaliplasmis_sozler', name: 'Kalıplaşmış Sözler' }
+                                ]
+                            },
+                            {
+                                id: 'cumlede_anlam',
+                                name: 'Cümlede Anlam',
+                                topics: [
+                                    { id: 'anlam_iliskileri', name: 'Anlam İlişkileri' },
+                                    { id: 'kavram_duygu', name: 'Kavram ve Duygu Cümleleri' },
+                                    { id: 'anlatimina_gore', name: 'Anlatımına Göre Cümleler' },
+                                    { id: 'cumle_analiz', name: 'Cümle Analizi ve Yorumu' }
+                                ]
+                            },
+                            {
+                                id: 'paragrafta_anlam',
+                                name: 'Paragrafta Anlam ve Anlatım Teknikleri',
+                                topics: [
+                                    { id: 'anlatim_bicimleri', name: 'Anlatım Biçimleri' },
+                                    { id: 'dusunce_gelistirme', name: 'Düşünceyi Geliştirme Yolları' },
+                                    { id: 'paragrafta_yapi', name: 'Paragrafta Yapı' },
+                                    { id: 'ana_yardimci', name: 'Paragrafta Ana ve Yardımcı Düşünceler' }
+                                ]
+                            },
+                            {
+                                id: 'ses_bilgisi',
+                                name: 'Ses Bilgisi',
+                                topics: [
+                                    { id: 'unlu_olaylari', name: 'Ünlü Olayları' },
+                                    { id: 'unsuz_olaylari', name: 'Ünsüz Olayları' }
+                                ]
+                            },
+                            {
+                                id: 'sozcukte_yapi',
+                                name: 'Sözcükte Yapı',
+                                topics: [
+                                    { id: 'kok_bilgisi', name: 'Kök Bilgisi' },
+                                    { id: 'ek_bilgisi', name: 'Ek Bilgisi' },
+                                    { id: 'yapi_bakimindan', name: 'Yapı Bakımından Sözcükler' }
+                                ]
+                            },
+                            {
+                                id: 'sozcuk_turleri',
+                                name: 'Sözcük Türleri',
+                                topics: [
+                                    { id: 'isim_soylu', name: 'İsim Soylu Sözcükler' },
+                                    { id: 'edat_baglac', name: 'Edat, Bağlaç ve Ünlem' },
+                                    { id: 'fiiller', name: 'Fiiller' },
+                                    { id: 'fiilimsiler', name: 'Fiilimsiler' },
+                                    { id: 'fiil_catisi', name: 'Fiil Çatısı' }
+                                ]
+                            },
+                            {
+                                id: 'cumle_ogeler_turler',
+                                name: 'Cümlenin Ögeleri ve Türleri',
+                                topics: [
+                                    { id: 'cumlenin_ogeleri', name: 'Cümlenin Ögeleri' },
+                                    { id: 'cumle_turleri', name: 'Cümle Türleri' }
+                                ]
+                            },
+                            {
+                                id: 'yazim_kurallari',
+                                name: 'Yazım Kuralları',
+                                topics: [
+                                    { id: 'buyuk_harf', name: 'Büyük Harflerin Kullanımı' },
+                                    { id: 'de_ki_mi', name: 'de, ki, mi Yazımı' },
+                                    { id: 'sayi_kisaltma', name: 'Sayıların, Kısaltmaların ve Birleşik Sözcüklerin Yazımı' },
+                                    { id: 'karistirilan', name: 'Yazımı Karıştırılan Sözcükler' }
+                                ]
+                            },
+                            {
+                                id: 'noktalama',
+                                name: 'Noktalama İşaretleri',
+                                topics: [
+                                    { id: 'nokta_virgul', name: 'Nokta, Virgül, Noktalı Virgül ve İki Nokta' },
+                                    { id: 'soru_unlem', name: 'Soru, Ünlem, Üç Nokta ve Diğer İşaretler' }
+                                ]
+                            },
+                            {
+                                id: 'anlatim_bozukluklari',
+                                name: 'Anlatım Bozuklukları',
+                                topics: [
+                                    { id: 'anlamsal_bozukluk', name: 'Anlamsal Bozukluklar' },
+                                    { id: 'yapisal_bozukluk', name: 'Yapısal Bozukluklar' }
+                                ]
+                            },
+                            {
+                                id: 'sozel_mantik',
+                                name: 'Sözel Mantık ve Muhakeme',
+                                topics: [
+                                    { id: 'siralama', name: 'Sıralama Soruları' },
+                                    { id: 'yerlestirme', name: 'Yerleştirme ve Eşleştirme Soruları' },
+                                    { id: 'tablo_diyagram', name: 'Tablo ve Diyagram Kurma Teknikleri' }
+                                ]
+                            }
                         ]
                     },
                     {
                         id: 'matematik', name: 'Matematik', icon: '🔢', color: '#3b82f6',
-                        topics: [
-                            { id: 'kesirler', name: 'Kesirler' },
-                            { id: 'oran', name: 'Oran-Orantı' },
-                            { id: 'dort_islem', name: 'Dört İşlem' },
-                            { id: 'geometri', name: 'Temel Geometri' }
+                        mainTopics: [
+                            {
+                                id: 'temel_kavramlar',
+                                name: 'Temel Kavramlar ve Sayılar',
+                                topics: [
+                                    { id: 'sayi_kumeleri', name: 'Sayı Kümeleri' },
+                                    { id: 'tek_cift', name: 'Tek ve Çift Sayılar' },
+                                    { id: 'pozitif_negatif', name: 'Pozitif ve Negatif Sayılar' },
+                                    { id: 'ardisik_sayilar', name: 'Ardışık Sayılar' },
+                                    { id: 'asal_faktoriyel', name: 'Asal Sayılar ve Faktöriyel' },
+                                    { id: 'sayi_basamak', name: 'Sayı Basamakları ve Çözümleme' },
+                                    { id: 'bolme_kurallari', name: 'Bölme ve Bölünebilme Kuralları' },
+                                    { id: 'asal_carpan', name: 'Asal Çarpanlara Ayırma' },
+                                    { id: 'ebob_ekok', name: 'EBOB ve EKOK' }
+                                ]
+                            },
+                            {
+                                id: 'rasyonel_ondalik',
+                                name: 'Rasyonel ve Ondalık Sayılar',
+                                topics: [
+                                    { id: 'rasyonel_islemler', name: 'Rasyonel Sayılarda İşlemler' },
+                                    { id: 'ondalik_devirli', name: 'Ondalık Sayılar ve Devirli Sayılar' },
+                                    { id: 'rasyonel_siralama', name: 'Rasyonel Sayılarda Sıralama' }
+                                ]
+                            },
+                            {
+                                id: 'esitsizlik_mutlak',
+                                name: 'Basit Eşitsizlikler ve Mutlak Değer',
+                                topics: [
+                                    { id: 'esitsizlik_ozellik', name: 'Eşitsizliklerin Özellikleri' },
+                                    { id: 'mutlak_denklem', name: 'Mutlak Değerli Denklemler' },
+                                    { id: 'mutlak_esitsizlik', name: 'Mutlak Değerli Eşitsizlikler' }
+                                ]
+                            },
+                            {
+                                id: 'uslu_koklu',
+                                name: 'Üslü ve Köklü Sayılar',
+                                topics: [
+                                    { id: 'uslu_ozellik', name: 'Üslü Sayı Özellikleri ve Denklemleri' },
+                                    { id: 'koklu_ozellik', name: 'Köklü Sayı Özellikleri ve Denklemleri' },
+                                    { id: 'koklu_islem', name: 'Köklü Sayılarda İşlemler ve Sıralama' }
+                                ]
+                            },
+                            {
+                                id: 'carpanlara_denklem',
+                                name: 'Çarpanlara Ayırma ve Denklem Çözme',
+                                topics: [
+                                    { id: 'ozdeslik_carpan', name: 'Özdeşlikler ve Çarpanlara Ayırma Yöntemleri' },
+                                    { id: 'birinci_derece', name: 'Birinci Dereceden Denklemler' }
+                                ]
+                            },
+                            {
+                                id: 'oran_oranti',
+                                name: 'Oran ve Orantı',
+                                topics: [
+                                    { id: 'dogru_ters', name: 'Doğru ve Ters Orantı' },
+                                    { id: 'oranti_ortalama', name: 'Orantı Özellikleri ve Ortalamalar' }
+                                ]
+                            },
+                            {
+                                id: 'problemler',
+                                name: 'Problemler',
+                                topics: [
+                                    { id: 'sayi_kesir', name: 'Sayı ve Kesir Problemleri' },
+                                    { id: 'yas_prob', name: 'Yaş Problemleri' },
+                                    { id: 'yuzde_prob', name: 'Yüzde Problemleri' },
+                                    { id: 'kar_zarar', name: 'Kâr ve Zarar Problemleri' },
+                                    { id: 'karisim', name: 'Karışım Problemleri' },
+                                    { id: 'isci', name: 'İşçi Problemleri' },
+                                    { id: 'hiz_hareket', name: 'Hız ve Hareket Problemleri' },
+                                    { id: 'grafik_tablo', name: 'Grafik ve Tablo Okuma Problemleri' }
+                                ]
+                            },
+                            {
+                                id: 'kume_fonksiyon',
+                                name: 'Kümeler ve Fonksiyonlar',
+                                topics: [
+                                    { id: 'kume_islem', name: 'Kümelerde İşlemler ve Küme Problemleri' },
+                                    { id: 'fonksiyon', name: 'Fonksiyon Kavramı ve Temel Uygulamalar' }
+                                ]
+                            },
+                            {
+                                id: 'veri_sayma',
+                                name: 'Veri, Sayma ve Olasılık',
+                                topics: [
+                                    { id: 'permutasyon_kombinasyon', name: 'Permütasyon ve Kombinasyon' },
+                                    { id: 'olasilik', name: 'Basit Olayların Olasılığı' },
+                                    { id: 'merkezi_egilim', name: 'Merkezi Eğilim ve Yayılım Ölçüleri' }
+                                ]
+                            },
+                            {
+                                id: 'islem_moduler',
+                                name: 'İşlem ve Modüler Aritmetik',
+                                topics: [
+                                    { id: 'ozel_islem', name: 'Özel Tanımlı İşlemler' },
+                                    { id: 'moduler_periyodik', name: 'Modüler Aritmetik ve Periyodik Tekrarlar' }
+                                ]
+                            },
+                            {
+                                id: 'sayisal_mantik',
+                                name: 'Sayısal Mantık ve Muhakeme',
+                                topics: [
+                                    { id: 'sayisal_sekilsel', name: 'Sayısal ve Şekilsel Akıl Yürütme' },
+                                    { id: 'mantiksal_tablo', name: 'Mantıksal Tablo Yorumlama' },
+                                    { id: 'rutin_olmayan', name: 'Rutin Olmayan Problemler' }
+                                ]
+                            },
+                            {
+                                id: 'geometri',
+                                name: 'Geometri',
+                                topics: [
+                                    { id: 'dogru_ucgen', name: 'Doğruda ve Üçgende Açılar' },
+                                    { id: 'ozel_ucgen', name: 'Özel Üçgenler ve Alan' },
+                                    { id: 'dortgen_cokgen', name: 'Dörtgenler ve Çokgenler' },
+                                    { id: 'cember_daire', name: 'Çember ve Daire' },
+                                    { id: 'kati_analitik', name: 'Katı Cisimler ve Analitik Geometri' }
+                                ]
+                            }
                         ]
                     },
                     {
                         id: 'tarih', name: 'Tarih', icon: '🏛️', color: '#f59e0b',
-                        topics: [
-                            { id: 'ataturk', name: 'Atatürk İlkeleri' },
-                            { id: 'inkilap', name: 'İnkılap Tarihi' },
-                            { id: 'turkiye', name: 'Türkiye Cumhuriyeti Tarihi' }
+                        mainTopics: [
+                            {
+                                id: 'islamiyet_oncesi',
+                                name: 'İslamiyet Öncesi Türk Tarihi',
+                                topics: [
+                                    { id: 'orta_asya_kultur', name: 'Orta Asya Kültür Merkezleri ve Türk Göçleri' },
+                                    { id: 'ilk_turk_devlet', name: 'İlk Türk Devletleri ve Toplulukları' },
+                                    { id: 'kultur_medeniyet', name: 'İslamiyet Öncesi Türklerde Kültür ve Medeniyet' }
+                                ]
+                            },
+                            {
+                                id: 'turk_islam',
+                                name: 'Türk-İslam Tarihi',
+                                topics: [
+                                    { id: 'ilk_musluman', name: 'İlk Müslüman Türk Devletleri' },
+                                    { id: 'turkiye_tarihi', name: 'Türkiye Tarihi ve Anadolu Selçuklu Devleti' },
+                                    { id: 'turk_islam_kultur', name: 'Türk-İslam Devletlerinde Kültür ve Medeniyet' }
+                                ]
+                            },
+                            {
+                                id: 'osmanlı_kurulus',
+                                name: 'Osmanlı Devleti Kuruluş ve Yükselme Dönemleri',
+                                topics: [
+                                    { id: 'kurulus_siyasi', name: 'Osmanlı Devleti Kuruluş Dönemi Siyasi Gelişmeleri' },
+                                    { id: 'yukselme_siyasi', name: 'Osmanlı Devleti Yükselme Dönemi Siyasi Gelişmeleri' }
+                                ]
+                            },
+                            {
+                                id: 'osmanlı_kultur',
+                                name: 'Osmanlı Devleti Kültür ve Medeniyet',
+                                topics: [
+                                    { id: 'devlet_yonetim', name: 'Devlet Yönetimi ve Saray Teşkilatı' },
+                                    { id: 'toplum_ekonomi', name: 'Toplum Yapısı ve Ekonomi' },
+                                    { id: 'ordu_egitim', name: 'Ordu, Eğitim, Hukuk, Sanat ve Bilim' }
+                                ]
+                            },
+                            {
+                                id: 'osmanlı_yenilesme',
+                                name: 'Osmanlı Devleti Yenileşme ve Demokratikleşme Hareketleri',
+                                topics: [
+                                    { id: 'duraklama_islahat', name: 'Duraklama Dönemi ve Islahatları' },
+                                    { id: 'gerileme_islahat', name: 'Gerileme Dönemi ve Islahatları' },
+                                    { id: 'dagilma_islahat', name: 'Dağılma Dönemi ve Islahatları' },
+                                    { id: 'demokratiklesme', name: 'Demokratikleşme Adımları' }
+                                ]
+                            },
+                            {
+                                id: 'xx_yuzyil_osmanlı',
+                                name: 'XX. Yüzyıl Başlarında Osmanlı Devleti',
+                                topics: [
+                                    { id: 'trablusgarp_balkan', name: 'Trablusgarp ve Balkan Savaşları' },
+                                    { id: 'i_dunya_savasi', name: 'Birinci Dünya Savaşı ve Cepheler' }
+                                ]
+                            },
+                            {
+                                id: 'kurtulus_hazirlik',
+                                name: 'Kurtuluş Savaşı Hazırlık Dönemi',
+                                topics: [
+                                    { id: 'mondros_isgal', name: 'Mondros Ateşkesi, İşgaller ve Cemiyetler' },
+                                    { id: 'genelge_kongre', name: 'Genelgeler ve Kongreler Süreci' },
+                                    { id: 'i_tbmm', name: 'Birinci TBMM Dönemi ve Ayaklanmalar' }
+                                ]
+                            },
+                            {
+                                id: 'kurtulus_muharebe',
+                                name: 'Kurtuluş Savaşı Muharebeler Dönemi',
+                                topics: [
+                                    { id: 'cepheler', name: 'Doğu, Güney ve Batı Cepheleri' },
+                                    { id: 'mudanya_lozan', name: 'Mudanya Ateşkesi ve Lozan Barış Antlaşması' }
+                                ]
+                            },
+                            {
+                                id: 'ataturk_ilke',
+                                name: 'Atatürk İlke ve İnkılapları',
+                                topics: [
+                                    { id: 'ataturk_ilkeleri', name: 'Atatürk İlkeleri' },
+                                    { id: 'siyasi_hukuki', name: 'Siyasi, Hukuki ve Sosyal Alandaki İnkılaplar' },
+                                    { id: 'egitim_kultur', name: 'Eğitim, Kültür ve Ekonomi Alanındaki İnkılaplar' }
+                                ]
+                            },
+                            {
+                                id: 'ataturk_donem',
+                                name: 'Atatürk Dönemi İç ve Dış Politika',
+                                topics: [
+                                    { id: 'ic_politika', name: 'İç Politika Gelişmeleri' },
+                                    { id: 'dis_politika', name: 'Türk Dış Politikası' }
+                                ]
+                            },
+                            {
+                                id: 'cagdas_turk_dunya',
+                                name: 'Çağdaş Türk ve Dünya Tarihi',
+                                topics: [
+                                    { id: 'ii_dunya_savasi', name: 'İkinci Dünya Savaşı ve Türkiye' },
+                                    { id: 'soguk_savas', name: 'Soğuk Savaş ve Yumuşama Dönemi' },
+                                    { id: 'kuresel_dunya', name: 'Küreselleşen Dünya ve Türk Dünyası' }
+                                ]
+                            }
                         ]
                     },
                     {
                         id: 'cografya', name: 'Coğrafya', icon: '🌍', color: '#10b981',
-                        topics: [
-                            { id: 'fiziki', name: 'Fiziki Coğrafya' },
-                            { id: 'beseri', name: 'Beşeri Coğrafya' },
-                            { id: 'turkiye_cog', name: 'Türkiye Coğrafyası' }
+                        mainTopics: [
+                            {
+                                id: 'cografi_konum',
+                                name: 'Türkiye\'nin Coğrafi Konumu',
+                                topics: [
+                                    { id: 'matematik_konum', name: 'Matematik Konum ve Sonuçları' },
+                                    { id: 'ozel_konum', name: 'Özel Konum ve Sonuçları' },
+                                    { id: 'jeopolitik', name: 'Türkiye\'nin Jeopolitik Konumu' },
+                                    { id: 'sinir_komsular', name: 'Sınır Komşuları ve Sınır Kapıları' }
+                                ]
+                            },
+                            {
+                                id: 'fiziki_ozellikler',
+                                name: 'Türkiye\'nin Fiziki Özellikleri',
+                                topics: [
+                                    { id: 'jeolojik_arazi', name: 'Jeolojik Yapı ve Arazi Oluşumu' },
+                                    { id: 'daglar', name: 'Türkiye\'nin Dağları' },
+                                    { id: 'ovalar_platolar', name: 'Türkiye\'nin Ovaları ve Platoları' },
+                                    { id: 'akarsular_su', name: 'Türkiye\'nin Akarsuları ve Su Varlığı' },
+                                    { id: 'goller', name: 'Türkiye\'nin Gölleri' },
+                                    { id: 'dis_kuvvetler', name: 'Dış Kuvvetler ve Yer Şekilleri' },
+                                    { id: 'kiyi_tipleri', name: 'Kıyı Tipleri' }
+                                ]
+                            },
+                            {
+                                id: 'iklim_bitki',
+                                name: 'Türkiye\'nin İklimi ve Bitki Örtüsü',
+                                topics: [
+                                    { id: 'iklim_elemanlari', name: 'İklim Elemanları' },
+                                    { id: 'iklim_tipleri', name: 'Türkiye\'de Görülen İklim Tipleri' },
+                                    { id: 'bitki_ortusu', name: 'Bitki Örtüsü ve Dağılışı' },
+                                    { id: 'toprak_turleri', name: 'Toprak Türleri ve Oluşumu' },
+                                    { id: 'dogal_afet', name: 'Doğal Afetler ve Çevre Sorunları' }
+                                ]
+                            },
+                            {
+                                id: 'nufus_yerlesme',
+                                name: 'Türkiye\'de Nüfus ve Yerleşme',
+                                topics: [
+                                    { id: 'nufus_dagilis', name: 'Nüfusun Dağılışı ve Yoğunluğu' },
+                                    { id: 'nufus_yapi', name: 'Nüfusun Yapısı ve Özellikleri' },
+                                    { id: 'gocler', name: 'Türkiye\'de Göçler' },
+                                    { id: 'nufus_politika', name: 'Nüfus Politikaları' },
+                                    { id: 'yerlesme_konut', name: 'Yerleşme Biçimleri ve Konut Tipleri' }
+                                ]
+                            },
+                            {
+                                id: 'ekonomik_cografya',
+                                name: 'Türkiye\'de Ekonomik Coğrafya',
+                                topics: [
+                                    { id: 'tarim_urunler', name: 'Tarım ve Tarım Ürünleri' },
+                                    { id: 'hayvancilik', name: 'Hayvancılık Faaliyetleri' },
+                                    { id: 'madenler', name: 'Madenler ve Maden Yatakları' },
+                                    { id: 'enerji_kaynaklari', name: 'Enerji Kaynakları ve Santraller' },
+                                    { id: 'sanayi', name: 'Sanayi Faaliyetleri ve Dağılımı' },
+                                    { id: 'ulasim_ticaret', name: 'Ulaşım ve Ticaret' },
+                                    { id: 'turizm', name: 'Turizm Varlıkları ve UNESCO Eserleri' }
+                                ]
+                            },
+                            {
+                                id: 'bolgesel_cografya',
+                                name: 'Bölgesel Coğrafya ve Planlama',
+                                topics: [
+                                    { id: 'kalkinma_projeleri', name: 'Bölgesel Kalkınma Projeleri' },
+                                    { id: 'islevsel_bolgeler', name: 'İşlevsel Bölgeler ve Özellikleri' }
+                                ]
+                            }
                         ]
                     },
                     {
                         id: 'vatandaslik', name: 'Vatandaşlık', icon: '🏛️', color: '#8b5cf6',
-                        topics: [
-                            { id: 'anayasa', name: 'Anayasa Bilgisi' },
-                            { id: 'hukuk', name: 'Temel Hukuk' },
-                            { id: 'demokrasi', name: 'Demokrasi ve İnsan Hakları' }
+                        mainTopics: [
+                            {
+                                id: 'hukuk_temel',
+                                name: 'Hukukun Temel Kavramları',
+                                topics: [
+                                    { id: 'sosyal_kurallar', name: 'Sosyal Hayatı Düzenleyen Kurallar ve Yaptırımlar' },
+                                    { id: 'hukuk_kaynaklari', name: 'Hukukun Kaynakları ve Normlar Hiyerarşisi' },
+                                    { id: 'hukuk_dallari', name: 'Hukukun Dalları' },
+                                    { id: 'hak_kavrami', name: 'Hak Kavramı ve Hakların Kazanılması' },
+                                    { id: 'kisilik_ehliyet', name: 'Kişilik ve Ehliyet Türleri' },
+                                    { id: 'borclar_miras', name: 'Borçlar Hukuku ve Miras Hukuku Esasları' }
+                                ]
+                            },
+                            {
+                                id: 'anayasa_tarihi',
+                                name: 'Anayasa Tarihi ve 1982 Anayasası',
+                                topics: [
+                                    { id: 'anayasa_turleri', name: 'Anayasa Türleri ve Hükümet Sistemleri' },
+                                    { id: 'turk_anayasa', name: 'Türk Anayasa Tarihi Süreci' },
+                                    { id: 'anayasa_1982', name: '1982 Anayasası\'nın Temel İlkeleri' }
+                                ]
+                            },
+                            {
+                                id: 'temel_hak_odev',
+                                name: 'Temel Hak ve Ödevler',
+                                topics: [
+                                    { id: 'hak_sinirlanma', name: 'Hakların Sınırlanması ve Durdurulması' },
+                                    { id: 'kisi_hak', name: 'Kişi Hak ve Ödevleri' },
+                                    { id: 'sosyal_ekonomik', name: 'Sosyal ve Ekonomik Haklar ve Ödevler' },
+                                    { id: 'siyasi_hak', name: 'Siyasi Hak ve Ödevler' }
+                                ]
+                            },
+                            {
+                                id: 'yasama',
+                                name: 'Yasama',
+                                topics: [
+                                    { id: 'tbmm_yapi', name: 'TBMM\'nin Yapısı ve Seçimler' },
+                                    { id: 'milletvekili_statu', name: 'Milletvekilliği Statüsü ve Yasama Bağışıklıkları' },
+                                    { id: 'tbmm_gorev', name: 'TBMM\'nin Görevleri ve Bilgi Edinme Yolları' }
+                                ]
+                            },
+                            {
+                                id: 'yurutme',
+                                name: 'Yürütme',
+                                topics: [
+                                    { id: 'cb_secim', name: 'Cumhurbaşkanı Seçimi, Nitelikleri ve Görevleri' },
+                                    { id: 'cb_teskilat', name: 'Cumhurbaşkanlığı Teşkilatı ve Kararnameler' },
+                                    { id: 'ohal', name: 'Olağanüstü Hal Rejimi' },
+                                    { id: 'mgk_ddk', name: 'Milli Güvenlik Kurulu ve Devlet Denetleme Kurulu' }
+                                ]
+                            },
+                            {
+                                id: 'yargi',
+                                name: 'Yargı',
+                                topics: [
+                                    { id: 'anayasa_mahkeme', name: 'Anayasa Mahkemesi Yapısı ve Görevleri' },
+                                    { id: 'adli_idari', name: 'Adli ve İdari Yargı Organları' },
+                                    { id: 'hsk', name: 'Hakimler ve Savcılar Kurulu' },
+                                    { id: 'sayistay', name: 'Sayıştay' }
+                                ]
+                            },
+                            {
+                                id: 'idare_hukuk',
+                                name: 'İdare Hukuku',
+                                topics: [
+                                    { id: 'idare_gorev', name: 'İdarenin Görevleri ve Teşkilat Yapısı' },
+                                    { id: 'merkez_tasra', name: 'Merkezden Yönetim ve Taşra Teşkilatı' },
+                                    { id: 'yerinden_yonetim', name: 'Yerinden Yönetim ve Mahalli İdareler' },
+                                    { id: 'kamu_gorevli', name: 'Kamu Görevlileri ve Devlet Memurluğu Kanunu' }
+                                ]
+                            },
+                            {
+                                id: 'uluslararasi_guncel',
+                                name: 'Uluslararası Kuruluşlar ve Güncel Bilgiler',
+                                topics: [
+                                    { id: 'kuresel_bolgesel', name: 'Küresel ve Bölgesel Örgütler' },
+                                    { id: 'turkiye_uyelik', name: 'Türkiye\'nin Üye Olduğu Önemli Kuruluşlar' },
+                                    { id: 'guncel_gelismeler', name: 'Güncel Sosyo-Ekonomik ve Kültürel Gelişmeler' }
+                                ]
+                            }
                         ]
                     }
                 ]
@@ -1092,7 +1534,7 @@
                                 name: 'Sözcük Türleri',
                                 topics: [
                                     { id: 'isim_soylu', name: 'İsim Soylu Sözcükler' },
-                                    { id: 'edat_baglac', name: 'Edat, Bağlaç ve Ünlem' },
+                                    { id: 'edat_baglac', name: 'Edat Bağlaç ve Ünlem' },
                                     { id: 'fiiller', name: 'Fiiller' },
                                     { id: 'fiilimsiler', name: 'Fiilimsiler' },
                                     { id: 'fiil_catisi', name: 'Fiil Çatısı' }
@@ -1111,8 +1553,8 @@
                                 name: 'Yazım Kuralları',
                                 topics: [
                                     { id: 'buyuk_harf', name: 'Büyük Harflerin Kullanımı' },
-                                    { id: 'de_ki_mi', name: 'de, ki, mi Yazımı' },
-                                    { id: 'sayi_kisaltma', name: 'Sayıların, Kısaltmaların ve Birleşik Sözcüklerin Yazımı' },
+                                    { id: 'de_ki_mi', name: 'de ki mi Yazımı' },
+                                    { id: 'sayi_kisaltma', name: 'Sayıların Kısaltmaların ve Birleşik Sözcüklerin Yazımı' },
                                     { id: 'karistirilan', name: 'Yazımı Karıştırılan Sözcükler' }
                                 ]
                             },
@@ -1120,8 +1562,8 @@
                                 id: 'noktalama',
                                 name: 'Noktalama İşaretleri',
                                 topics: [
-                                    { id: 'nokta_virgul', name: 'Nokta, Virgül, Noktalı Virgül ve İki Nokta' },
-                                    { id: 'soru_unlem', name: 'Soru, Ünlem, Üç Nokta ve Diğer İşaretler' }
+                                    { id: 'nokta_virgul', name: 'Nokta Virgül Noktalı Virgül ve İki Nokta' },
+                                    { id: 'soru_unlem', name: 'Soru Ünlem Üç Nokta ve Diğer İşaretler' }
                                 ]
                             },
                             {
@@ -1280,9 +1722,7 @@
                                 topics: [
                                     { id: 'orta_asya_kultur', name: 'Orta Asya Kültür Merkezleri ve Türk Göçleri' },
                                     { id: 'ilk_turk_devlet', name: 'İlk Türk Devletleri ve Toplulukları' },
-                                    { id: 'devlet_yonetim_ordu', name: 'İslamiyet Öncesi Türklerde Devlet Yönetimi ve Ordu' },
-                                    { id: 'sosyal_ekonomi', name: 'Sosyal Hayat, Hukuk, Ekonomi, Din ve İnanış' },
-                                    { id: 'bilim_sanat', name: 'Bilim, Edebiyat ve Sanat' }
+                                    { id: 'kultur_medeniyet', name: 'İslamiyet Öncesi Türklerde Kültür ve Medeniyet' }
                                 ]
                             },
                             {
@@ -1290,8 +1730,7 @@
                                 name: 'Türk-İslam Tarihi',
                                 topics: [
                                     { id: 'ilk_musluman', name: 'İlk Müslüman Türk Devletleri' },
-                                    { id: 'misir_turk', name: 'Mısır\'da Kurulan Türk Devletleri' },
-                                    { id: 'turkiye_tarihi', name: 'Türkiye Tarihi (Anadolu Selçukluları ve Beylikler Dönemi)' },
+                                    { id: 'turkiye_tarihi', name: 'Türkiye Tarihi ve Anadolu Selçuklu Devleti' },
                                     { id: 'turk_islam_kultur', name: 'Türk-İslam Devletlerinde Kültür ve Medeniyet' }
                                 ]
                             },
@@ -1307,20 +1746,19 @@
                                 id: 'osmanlı_kultur',
                                 name: 'Osmanlı Devleti Kültür ve Medeniyet',
                                 topics: [
-                                    { id: 'merkez_teskilat', name: 'Merkez Teşkilatı (Saray, Seyfiye, İlmiye, Kalemiye)' },
-                                    { id: 'tasra_eyalet', name: 'Taşra Teşkilatı ve Eyalet Sistemi' },
-                                    { id: 'toprak_ordu', name: 'Toprak Yönetimi ve Ordu Yapısı' },
-                                    { id: 'hukuk_egitim', name: 'Hukuk, Eğitim, Ekonomi ve Sosyal Hayat' }
+                                    { id: 'devlet_yonetim', name: 'Devlet Yönetimi ve Saray Teşkilatı' },
+                                    { id: 'toplum_ekonomi', name: 'Toplum Yapısı ve Ekonomi' },
+                                    { id: 'ordu_egitim', name: 'Ordu, Eğitim, Hukuk, Sanat ve Bilim' }
                                 ]
                             },
                             {
                                 id: 'osmanlı_yenilesme',
                                 name: 'Osmanlı Devleti Yenileşme ve Demokratikleşme Hareketleri',
                                 topics: [
-                                    { id: 'xvii_duraklama', name: 'XVII. Yüzyıl (Duraklama) Dönemi Islahatları' },
-                                    { id: 'xviii_gerileme', name: 'XVIII. Yüzyıl (Gerileme) Dönemi Islahatları' },
-                                    { id: 'xix_siyasi', name: 'XIX. Yüzyıl (Dağılma) Dönemi Siyasi Gelişmeleri' },
-                                    { id: 'xix_islahat', name: 'XIX. Yüzyıl Islahatları ve Demokratikleşme Adımları (Tanzimat, Islahat, Meşrutiyet)' }
+                                    { id: 'xvii_duraklama', name: 'XVII. Yüzyıl Duraklama Dönemi Islahatları' },
+                                    { id: 'xviii_gerileme', name: 'XVIII. Yüzyıl Gerileme Dönemi Islahatları' },
+                                    { id: 'xix_dagilma', name: 'XIX. Yüzyıl Dağılma Dönemi Islahatları' },
+                                    { id: 'demokratiklesme', name: 'Demokratikleşme Adımları' }
                                 ]
                             },
                             {
@@ -1328,17 +1766,16 @@
                                 name: 'XX. Yüzyıl Başlarında Osmanlı Devleti',
                                 topics: [
                                     { id: 'trablusgarp_balkan', name: 'Trablusgarp ve Balkan Savaşları' },
-                                    { id: 'i_dunya_savasi', name: 'I. Dünya Savaşı\'nın Nedenleri, Cepheler ve Antlaşmalar' },
-                                    { id: 'mondros_sevr', name: 'Mondros Ateşkesi ve Sevr Barış Antlaşması' }
+                                    { id: 'i_dunya_savasi', name: 'I. Dünya Savaşı ve Cepheler' }
                                 ]
                             },
                             {
                                 id: 'kurtulus_hazirlik',
                                 name: 'Kurtuluş Savaşı Hazırlık Dönemi',
                                 topics: [
-                                    { id: 'cemiyetler_isgal', name: 'Cemiyetler ve İşgaller Karşısında İlk Tepkiler' },
+                                    { id: 'mondros_isgal', name: 'Mondros Ateşkesi, İşgaller ve Cemiyetler' },
                                     { id: 'genelge_kongre', name: 'Genelgeler ve Kongreler Süreci' },
-                                    { id: 'i_tbmm', name: 'I. TBMM Dönemi, Özellikleri ve Ayaklanmalar' }
+                                    { id: 'i_tbmm', name: 'I. TBMM Dönemi ve Ayaklanmalar' }
                                 ]
                             },
                             {
@@ -1354,26 +1791,25 @@
                                 name: 'Atatürk İlke ve İnkılapları',
                                 topics: [
                                     { id: 'ataturk_ilkeleri', name: 'Atatürk İlkeleri' },
-                                    { id: 'siyasal_hukuk', name: 'Siyasal, Hukuksal ve Eğitim Alanındaki İnkılaplar' },
-                                    { id: 'toplumsal_ekonomik', name: 'Toplumsal ve Ekonomik Alandaki İnkılaplar' }
+                                    { id: 'siyasi_hukuki', name: 'Siyasi, Hukuki ve Sosyal Alandaki İnkılaplar' },
+                                    { id: 'egitim_kultur', name: 'Eğitim, Kültür ve Ekonomi Alanındaki İnkılaplar' }
                                 ]
                             },
                             {
                                 id: 'ataturk_donem',
                                 name: 'Atatürk Dönemi İç ve Dış Politika',
                                 topics: [
-                                    { id: 'ic_politika', name: 'Atatürk Dönemi İç Politika Gelişmeleri' },
-                                    { id: 'dis_1923_1930', name: '1923-1930 Dönemi Dış Politika (Lozan\'dan Kalan Sorunlar)' },
-                                    { id: 'dis_1930_1939', name: '1930-1939 Dönemi Dış Politika (Çok Taraflı Antlaşmalar ve Paktlar)' }
+                                    { id: 'ic_politika', name: 'İç Politika Gelişmeleri' },
+                                    { id: 'dis_politika', name: 'Türk Dış Politikası' }
                                 ]
                             },
                             {
                                 id: 'cagdas_turk_dunya',
                                 name: 'Çağdaş Türk ve Dünya Tarihi',
                                 topics: [
-                                    { id: 'ii_dunya_savasi', name: 'II. Dünya Savaşı Süreci ve Türkiye\'ye Etkileri' },
-                                    { id: 'soguk_savas', name: 'Soğuk Savaş Dönemi Gelişmeleri' },
-                                    { id: 'yumusama_kuresel', name: 'Yumuşama Dönemi ve Küreselleşen Dünya' }
+                                    { id: 'ii_dunya_savasi', name: 'II. Dünya Savaşı ve Türkiye' },
+                                    { id: 'soguk_savas', name: 'Soğuk Savaş ve Yumuşama Dönemi' },
+                                    { id: 'kuresel_dunya', name: 'Küreselleşen Dünya ve Türk Dünyası' }
                                 ]
                             }
                         ]
@@ -1621,7 +2057,7 @@
                                 name: 'Sözcük Türleri',
                                 topics: [
                                     { id: 'isim_soylu', name: 'İsim Soylu Sözcükler' },
-                                    { id: 'edat_baglac', name: 'Edat, Bağlaç ve Ünlem' },
+                                    { id: 'edat_baglac', name: 'Edat Bağlaç ve Ünlem' },
                                     { id: 'fiiller', name: 'Fiiller' },
                                     { id: 'fiilimsiler', name: 'Fiilimsiler' },
                                     { id: 'fiil_catisi', name: 'Fiil Çatısı' }
@@ -1640,8 +2076,8 @@
                                 name: 'Yazım Kuralları',
                                 topics: [
                                     { id: 'buyuk_harf', name: 'Büyük Harflerin Kullanımı' },
-                                    { id: 'de_ki_mi', name: 'de, ki, mi Yazımı' },
-                                    { id: 'sayi_kisaltma', name: 'Sayıların, Kısaltmaların ve Birleşik Sözcüklerin Yazımı' },
+                                    { id: 'de_ki_mi', name: 'de ki mi Yazımı' },
+                                    { id: 'sayi_kisaltma', name: 'Sayıların Kısaltmaların ve Birleşik Sözcüklerin Yazımı' },
                                     { id: 'karistirilan', name: 'Yazımı Karıştırılan Sözcükler' }
                                 ]
                             },
@@ -1649,8 +2085,8 @@
                                 id: 'noktalama',
                                 name: 'Noktalama İşaretleri',
                                 topics: [
-                                    { id: 'nokta_virgul', name: 'Nokta, Virgül, Noktalı Virgül ve İki Nokta' },
-                                    { id: 'soru_unlem', name: 'Soru, Ünlem, Üç Nokta ve Diğer İşaretler' }
+                                    { id: 'nokta_virgul', name: 'Nokta Virgül Noktalı Virgül ve İki Nokta' },
+                                    { id: 'soru_unlem', name: 'Soru Ünlem Üç Nokta ve Diğer İşaretler' }
                                 ]
                             },
                             {
@@ -1799,7 +2235,110 @@
                             }
                         ]
                     },
-                    { id: 'tarih', name: 'Tarih', icon: '🏛️', color: '#f59e0b', mainTopics: [] },
+                    { 
+                        id: 'tarih', 
+                        name: 'Tarih', 
+                        icon: '🏛️', 
+                        color: '#f59e0b', 
+                        mainTopics: [
+                            {
+                                id: 'islamiyet_oncesi',
+                                name: 'İslamiyet Öncesi Türk Tarihi',
+                                topics: [
+                                    { id: 'orta_asya_kultur', name: 'Orta Asya Kültür Merkezleri ve Türk Göçleri' },
+                                    { id: 'ilk_turk_devlet', name: 'İlk Türk Devletleri ve Toplulukları' },
+                                    { id: 'kultur_medeniyet', name: 'İslamiyet Öncesi Türklerde Kültür ve Medeniyet' }
+                                ]
+                            },
+                            {
+                                id: 'turk_islam',
+                                name: 'Türk-İslam Tarihi',
+                                topics: [
+                                    { id: 'ilk_musluman', name: 'İlk Müslüman Türk Devletleri' },
+                                    { id: 'turkiye_tarihi', name: 'Türkiye Tarihi ve Anadolu Selçuklu Devleti' },
+                                    { id: 'turk_islam_kultur', name: 'Türk-İslam Devletlerinde Kültür ve Medeniyet' }
+                                ]
+                            },
+                            {
+                                id: 'osmanlı_kurulus',
+                                name: 'Osmanlı Devleti Kuruluş ve Yükselme Dönemleri',
+                                topics: [
+                                    { id: 'kurulus_siyasi', name: 'Osmanlı Devleti Kuruluş Dönemi Siyasi Gelişmeleri' },
+                                    { id: 'yukselme_siyasi', name: 'Osmanlı Devleti Yükselme Dönemi Siyasi Gelişmeleri' }
+                                ]
+                            },
+                            {
+                                id: 'osmanlı_kultur',
+                                name: 'Osmanlı Devleti Kültür ve Medeniyet',
+                                topics: [
+                                    { id: 'devlet_yonetim', name: 'Devlet Yönetimi ve Saray Teşkilatı' },
+                                    { id: 'toplum_ekonomi', name: 'Toplum Yapısı ve Ekonomi' },
+                                    { id: 'ordu_egitim', name: 'Ordu, Eğitim, Hukuk, Sanat ve Bilim' }
+                                ]
+                            },
+                            {
+                                id: 'osmanlı_yenilesme',
+                                name: 'Osmanlı Devleti Yenileşme ve Demokratikleşme Hareketleri',
+                                topics: [
+                                    { id: 'xvii_duraklama', name: 'XVII. Yüzyıl Duraklama Dönemi Islahatları' },
+                                    { id: 'xviii_gerileme', name: 'XVIII. Yüzyıl Gerileme Dönemi Islahatları' },
+                                    { id: 'xix_dagilma', name: 'XIX. Yüzyıl Dağılma Dönemi Islahatları' },
+                                    { id: 'demokratiklesme', name: 'Demokratikleşme Adımları' }
+                                ]
+                            },
+                            {
+                                id: 'xx_yuzyil_osmanlı',
+                                name: 'XX. Yüzyıl Başlarında Osmanlı Devleti',
+                                topics: [
+                                    { id: 'trablusgarp_balkan', name: 'Trablusgarp ve Balkan Savaşları' },
+                                    { id: 'i_dunya_savasi', name: 'I. Dünya Savaşı ve Cepheler' }
+                                ]
+                            },
+                            {
+                                id: 'kurtulus_hazirlik',
+                                name: 'Kurtuluş Savaşı Hazırlık Dönemi',
+                                topics: [
+                                    { id: 'mondros_isgal', name: 'Mondros Ateşkesi, İşgaller ve Cemiyetler' },
+                                    { id: 'genelge_kongre', name: 'Genelgeler ve Kongreler Süreci' },
+                                    { id: 'i_tbmm', name: 'I. TBMM Dönemi ve Ayaklanmalar' }
+                                ]
+                            },
+                            {
+                                id: 'kurtulus_muharebe',
+                                name: 'Kurtuluş Savaşı Muharebeler Dönemi',
+                                topics: [
+                                    { id: 'cepheler', name: 'Doğu, Güney ve Batı Cepheleri' },
+                                    { id: 'mudanya_lozan', name: 'Mudanya Ateşkesi ve Lozan Barış Antlaşması' }
+                                ]
+                            },
+                            {
+                                id: 'ataturk_ilke',
+                                name: 'Atatürk İlke ve İnkılapları',
+                                topics: [
+                                    { id: 'ataturk_ilkeleri', name: 'Atatürk İlkeleri' },
+                                    { id: 'siyasi_hukuki', name: 'Siyasi, Hukuki ve Sosyal Alandaki İnkılaplar' },
+                                    { id: 'egitim_kultur', name: 'Eğitim, Kültür ve Ekonomi Alanındaki İnkılaplar' }
+                                ]
+                            },
+                            {
+                                id: 'ataturk_donem',
+                                name: 'Atatürk Dönemi İç ve Dış Politika',
+                                topics: [
+                                    { id: 'ic_politika', name: 'İç Politika Gelişmeleri' },
+                                    { id: 'dis_politika', name: 'Türk Dış Politikası' }
+                                ]
+                            },
+                            {
+                                id: 'cagdas_turk_dunya',
+                                name: 'Çağdaş Türk ve Dünya Tarihi',
+                                topics: [
+                                    { id: 'ii_dunya_savasi', name: 'II. Dünya Savaşı ve Türkiye' },
+                                    { id: 'soguk_savas', name: 'Soğuk Savaş ve Yumuşama Dönemi' },
+                                    { id: 'kuresel_dunya', name: 'Küreselleşen Dünya ve Türk Dünyası' }
+                                ]
+                            }
+                        ]
+                    },
                     { 
                         id: 'cografya', 
                         name: 'Coğrafya', 
@@ -1893,7 +2432,93 @@
                             }
                         ]
                     },
-                    { id: 'vatandaslik', name: 'Vatandaşlık', icon: '🏛️', color: '#8b5cf6', mainTopics: [] }
+                    { 
+                        id: 'vatandaslik', 
+                        name: 'Vatandaşlık', 
+                        icon: '🏛️', 
+                        color: '#8b5cf6', 
+                        mainTopics: [
+                            {
+                                id: 'hukuk_temel',
+                                name: 'Hukukun Temel Kavramları',
+                                topics: [
+                                    { id: 'sosyal_kurallar', name: 'Sosyal Hayatı Düzenleyen Kurallar ve Yaptırımlar' },
+                                    { id: 'hukuk_kaynaklari', name: 'Hukukun Kaynakları ve Normlar Hiyerarşisi' },
+                                    { id: 'hukuk_dallari', name: 'Hukukun Dalları' },
+                                    { id: 'hak_kavrami', name: 'Hak Kavramı ve Hakların Kazanılması' },
+                                    { id: 'kisilik_ehliyet', name: 'Kişilik ve Ehliyet Türleri' },
+                                    { id: 'borclar_miras', name: 'Borçlar Hukuku ve Miras Hukuku Esasları' }
+                                ]
+                            },
+                            {
+                                id: 'anayasa_giris',
+                                name: 'Anayasa Hukukuna Giriş ve Türk Anayasa Tarihi',
+                                topics: [
+                                    { id: 'anayasa_turleri', name: 'Anayasa Türleri ve Hükümet Sistemleri' },
+                                    { id: 'turk_anayasa', name: 'Türk Anayasa Tarihi Süreci' },
+                                    { id: 'anayasa_1982', name: '1982 Anayasası Temel İlkeleri' }
+                                ]
+                            },
+                            {
+                                id: 'temel_hak_odev',
+                                name: 'Temel Hak ve Ödevler',
+                                topics: [
+                                    { id: 'hak_sinirlanma', name: 'Hakların Sınırlanması ve Durdurulması' },
+                                    { id: 'kisi_hak', name: 'Kişi Hak ve Ödevleri' },
+                                    { id: 'sosyal_ekonomik', name: 'Sosyal ve Ekonomik Haklar' },
+                                    { id: 'siyasi_hak', name: 'Siyasi Hak ve Ödevler' }
+                                ]
+                            },
+                            {
+                                id: 'yasama',
+                                name: 'Yasama',
+                                topics: [
+                                    { id: 'tbmm_yapi', name: 'TBMM Yapısı ve Seçimler' },
+                                    { id: 'milletvekili_statu', name: 'Milletvekilliği Statüsü' },
+                                    { id: 'yasama_bagisiklik', name: 'Yasama Bağışıklıkları' },
+                                    { id: 'tbmm_gorev', name: 'TBMM Görevleri ve Bilgi Edinme Yolları' }
+                                ]
+                            },
+                            {
+                                id: 'yurutme',
+                                name: 'Yürütme',
+                                topics: [
+                                    { id: 'cb_secim', name: 'Cumhurbaşkanı Seçimi ve Görevleri' },
+                                    { id: 'cb_kararname', name: 'Cumhurbaşkanlığı Kararnameleri ve Yönetmelikler' },
+                                    { id: 'ohal', name: 'Olağanüstü Hal Yönetimi' },
+                                    { id: 'mgk_ddk', name: 'Milli Güvenlik Kurulu ve Devlet Denetleme Kurulu' }
+                                ]
+                            },
+                            {
+                                id: 'yargi',
+                                name: 'Yargı',
+                                topics: [
+                                    { id: 'anayasa_mahkeme', name: 'Anayasa Mahkemesi Yapısı ve Görevleri' },
+                                    { id: 'adli_idari', name: 'Adli ve İdari Yargı Organları' },
+                                    { id: 'hsk', name: 'Hakimler ve Savcılar Kurulu' },
+                                    { id: 'sayistay', name: 'Sayıştay' }
+                                ]
+                            },
+                            {
+                                id: 'idare_hukuk',
+                                name: 'İdare Hukuku',
+                                topics: [
+                                    { id: 'idare_teskilat', name: 'İdarenin Teşkilat Yapısı' },
+                                    { id: 'merkez_tasra', name: 'Merkezden Yönetim ve Taşra Teşkilatı' },
+                                    { id: 'yerinden_yonetim', name: 'Yerinden Yönetim ve Mahalli İdareler' },
+                                    { id: 'kamu_gorevli', name: 'Kamu Görevlileri ve Memurluk Mevzuatı' }
+                                ]
+                            },
+                            {
+                                id: 'uluslararasi_guncel',
+                                name: 'Uluslararası Kuruluşlar ve Güncel Bilgiler',
+                                topics: [
+                                    { id: 'kuresel_bolgesel', name: 'Küresel ve Bölgesel Örgütler' },
+                                    { id: 'dunya_miras', name: 'Dünya Mirası ve Güncel Gelişmeler' }
+                                ]
+                            }
+                        ]
+                    }
                 ]
             },
             tyt: {
@@ -2268,19 +2893,6 @@
                 if (subject.mainTopics) {
                     topicCount = subject.mainTopics.length + ' ana konu';
                 } else if (subject.topics) {
-                    topicCount = subject.topics.length + ' konu';
-                } else {
-                    topicCount = 'Henüz konu yok';
-                }
-                
-                card.innerHTML = `
-                    <div class="card-icon">${subject.icon}</div>
-                    <div class="card-title">${subject.name}</div>
-                    <div class="card-subtitle">${topicCount}</div>
-                `;
-                grid.appendChild(card);
-            });
-        }
                     topicCount = subject.topics.length + ' konu';
                 } else {
                     topicCount = 'Henüz konu yok';
